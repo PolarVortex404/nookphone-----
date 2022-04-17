@@ -1,0 +1,117 @@
+body {
+    background-color: #A172E0;
+}
+
+footer {
+    color: #6FB5E9
+}
+
+.app-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+  }
+  .app-item {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .dock-container {
+    background-color:#6FB5E9;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+  }
+  .dock-item {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+.critterpedia-header {
+    padding: 60px;
+    text-align: center;
+    background: #6FB5E9;
+    color: white;
+    font-size: 30px;
+    font-family: Helvetica;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+.sticky + .content {
+  padding-top: 250px;
+}
+.blathers {
+  grid-column: 1/3;
+  grid-row: 1/4;
+}
+.bugs {
+  grid-column: 3;
+  grid-row: 1;
+}
+.fish {
+  grid-column: 3;
+  grid-row: 2;
+}
+.sea {
+  grid-column: 3;
+  grid-row: 3;
+}
+.content {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px,auto);
+}
+
+.dump-critters-container {
+  margin-top: 300px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 10px;
+}
+.critter-item {
+  padding: 40px;
+}
+
+.detail-header {
+  padding: 60px;
+  text-align: center;
+  background: #6FB5E9;
+  color: white;
+  font-size: 30px;
+  font-family: Helvetica;
+}
+.detail-image {
+
+  grid-column: 1/3;
+  grid-row: 1/4;
+}
+.detail-months {
+  grid-column: 3;
+  grid-row: 1;
+}
+.detail-location {
+  grid-column: 3;
+  grid-row: 2;
+}
+.detail-price {
+  grid-column: 3;
+  grid-row: 3;
+}
+.flex-row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.hide {
+  display: none;
+  visibility: collapse;
+}
+
+.push-down-margin {
+  margin-top: 300px;
+  align-items: left;
+}
