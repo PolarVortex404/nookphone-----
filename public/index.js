@@ -13,3 +13,12 @@ function myFunction() {
     }
 }
 
+
+function clickMap() {
+  if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(openGoogleMaps);
+}}
+
+function openGoogleMaps(position) {
+  window.location =`https://maps.google.com?q=${position.coords.latitude},${position.coords.longitude}`
+}

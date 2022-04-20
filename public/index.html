@@ -13,12 +13,12 @@
 
     <body>
         
-        <div class="app-container">
-            <a href="https://www.google.com/maps">
-                <div class="app-item">
+        <div class="app-container" id="demo">
+            
+                <div onclick="clickMap()" class="app-item">
                     <img src="./images-acnh/NH-Icon-Nook_Phone-Map.png">
                 </div>
-            </a>
+        
             <a href="underConstruction.html">
                 <div class="app-item">
                     <img src="./images-acnh/NH-Icon-Nook_Phone-Nook_shopping.png">
@@ -54,7 +54,8 @@
             </a>
             <a href="critterpedia.html">
                 <div class="dock-item">
-                    <img src="./images-acnh/NH-Icon-Nook_Phone-Critterpedia.png">
+                    <label for="icon-critterpedia"></label>
+                    <img id="icon-critterpedia" src="./images-acnh/NH-Icon-Nook_Phone-Critterpedia.png">
                 </div>
             </a>
             <a href="underConstruction.html">
@@ -62,6 +63,8 @@
                     <img src="./images-acnh/NH-Icon-Nook_Phone-DIY_Recipes.png">
                 </div>
             </a>
+            
         </div>
+        <script src="index.js"></script>
     </body>
 </html>

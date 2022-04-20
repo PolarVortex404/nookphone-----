@@ -32,7 +32,7 @@ footer {
     text-align: center;
   }
 .critterpedia-header {
-    padding: 60px;
+    padding: 10px;
     text-align: center;
     background: #6FB5E9;
     color: white;
@@ -149,3 +149,7 @@ footer {
   width: 100%;
 }
 
+.header {
+  text-align: center;
+
+}

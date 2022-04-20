@@ -41,7 +41,6 @@ app.post('/api/island',(req,res) =>{
         
         for (let i = 0; i < randomVillagers.length; i++) {
          
-        //   villager.src = response.data[randomVillagers[i]].nh_details.photo_url
           let villager = {
               apiId: response.data[randomVillagers[i]].id,
               name: response.data[randomVillagers[i]].name,
