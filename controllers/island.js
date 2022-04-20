@@ -13,8 +13,8 @@ module.exports ={
                     ['createdAt','DESC']
                 ]
             })
-            .then(islands =>res.status(200).send(islands))
-            .catch(error => res.status(400).send(error))
+            .then(islands =>islands)
+            .catch(error => error)
 
     },
     getById(req,res){
@@ -40,7 +40,7 @@ module.exports ={
     //     .then(island =>res.status(200).send(island)) //promise syntax
     //     .catch(error => res.status(400).send(error))
     // },
-    add(req,res){
+    add(req,res){ //post 
         return Island.create({
             islandName: req.body.islandName,
             islandOwner: req.body.islandOwner,
@@ -51,8 +51,7 @@ module.exports ={
                 as: 'villagers'
             }]
         })
-        .then(island =>res.status(200).send(island)) //promise syntax
-        .catch(error => res.status(400).send(error))
+     
     },
     update(req,res){
         return Island

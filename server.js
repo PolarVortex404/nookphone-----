@@ -12,7 +12,10 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 const villagerController = require('./controllers').villager
 
-app.get('/api/villager',villagerController.list) //going to this endpoint 'gets'/lists all villagers
+app.get('/api/villager',(req,res) =>{
+    villagerController.list(req,res)
+        .then(island =>res.status(200).send(island)) //moving server response to server.js
+        .catch(error => res.status(400).send(error))}) //going to this endpoint 'gets'/lists all villagers
 app.get('/api/villager/:id',villagerController.getById) //gets villager by ID
 app.post('/api/villager',villagerController.add)
 app.put('/api/villager/:id',villagerController.update)
@@ -49,7 +52,9 @@ app.post('/api/island',(req,res) =>{
           req.body.villagers.push(villager)
         }
         islandController.add(req,res)
-        res.sendFile('socialCritters.html')
+        .then(island =>res.redirect('/social-critters')) //should refresh w/ new island
+        .catch(error => res.status(400).send(error))
+        
         
     })
 })
@@ -61,11 +66,11 @@ app.get('/',(req,res)=>{
 })
 app.get('/social-critters', (req,res) =>{
     console.log('getting islands')
-    islandController.list(req,res).then(response =>{
+    islandController.list(req,res).then(islands =>{
         console.log('rendering social critters')
-        console.log(response)
-        res.render('socialCritters', {
-            islands: response.data
+        console.log(islands)
+        res.render('social-critters', {
+            islands: islands 
         })
     })
 })

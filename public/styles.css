@@ -125,3 +125,27 @@ footer {
   background-image: url("/public/images-acnh/resetti/background.jpg");
   
 }
+
+.islands-container{
+
+
+}
+
+.user-island {
+  min-height: 100px;
+  
+  
+}
+
+.center-text {
+  text-align: center;
+}
+
+.villagers-container {
+  display: flex;
+  justify-content: space-around;
+  border: #000000;
+  border-width: 1px;
+  width: 100%;
+}
+

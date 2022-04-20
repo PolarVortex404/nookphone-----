@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nookphone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header></header>
+    <nav>
+
+    </nav>
+    <div>
+        <div> 
+            <h1>words</h1>
+        </div>
+        <div>
+            <div id="neighId" class="neighbor-container">
+                <section></section>
+                <div>
+                    <div class="form-class">
+                        <h2>Enter your name and populate your village</h2>
+                        <br> <p></p>
+                        <form action="/api/island" method="post">
+                            <div class="village-form" id="vform-response">
+                                <label for="islandOwner">Your Name Here:</label>
+                                <input type="text" id="islandOwner" name="islandOwner">
+                                <label for="islandName">Name your village!</label>
+                                <input type="text" id="islandName" name="islandName">
+                                <button id="selectBtn" >Click Me</button>
+                            </div>
+                                
+                        </form>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+        
+        <div class="islands-container">
+        
+                <%islands.forEach(function(el, index) { %>
+                   
+                        <div class="user-island">
+            
+                               
+                            
+                            <div class="center-text">
+                                <h2> Village: <%= el.islandName %> </h2>
+                            </div>
+                            
+                            <div class="center-text">
+                                <h3> Created By: <%= el.islandOwner %> </h3>
+                            </div>
+                            <div class="villagers-container">
+                                <% el.villagers.forEach(function(el,index) { %>
+                                    <div class="villager-item">                                
+                                    
+                                        <img src="<%= el.imageUrl%>" height="100" width="100">
+                                        
+                                        <p>
+                                            <b>Villager:</b> <%= el.name %> 
+                                        </p>
+                                        <p>
+                                            <b>Personality:</b> <%=el.personality %>
+                                        </p>
+                                        
+                                    </div>
+                                    <%}); %>                   
+                                </div>
+                                <hr>
+                            <%}); %>
+    
+
+                        </div>
+        </div>
+           
+        
+</body>
+</html>
