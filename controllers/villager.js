@@ -1,9 +1,15 @@
+const Island = require('../models').Island;
+
 const Villager = require('../models').Villager;
 
 module.exports ={
     list(req,res){
         return Villager
             .findAll({
+                include: [{
+                    model: Island,
+                    as: 'island'
+                }],
                 order: [
                     ['createdAt','DESC']
                 ]
@@ -31,7 +37,8 @@ module.exports ={
             name: req.body.name,
             species: req.body.species,
             imageUrl: req.body.imageUrl,
-            personality: req.body.personality
+            personality: req.body.personality,
+            islandId: req.body.islandId
         })
     },
     update(req,res){
@@ -48,7 +55,8 @@ module.exports ={
                 name: req.body.name || villager.name,
                 species: req.body.species || villager.species,
                 imageUrl: req.body.imageUrl || villager.imageUrl,
-                personality: req.body.personality || villager.personality
+                personality: req.body.personality || villager.personality,
+                islandId: req.body.islandId || villager.islandId
             })
             .then(villagers =>res.status(200).send(villagers))
             .catch(error => res.status(400).send(error))

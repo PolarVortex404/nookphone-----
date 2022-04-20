@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const { villager } = require('../controllers');
 module.exports = (sequelize, DataTypes) => {
   class Villager extends Model {
     /**
@@ -10,7 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Villager.belongsTo(models.Island, {
+        foreignKey: 'islandId',
+        as: 'island'
+      })
     }
   }
   Villager.init({
@@ -18,10 +22,12 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     imageUrl: DataTypes.STRING,
     species: DataTypes.STRING,
-    personality: DataTypes.STRING
+    personality: DataTypes.STRING,
+    islandId: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'Villager',
+    modelName: 'Villager'
   });
+
   return Villager;
 };

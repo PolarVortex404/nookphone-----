@@ -5,7 +5,7 @@ const clickCritter = (critter) =>{
     critterContent.classList.add('hide')
     critterContent.classList.remove('sticky')
     console.log('you clicked me')
-    axios.get(`/${critter}`).then((res) =>{
+    axios.get(`/${critter}`).then((res) =>{ //gets specific critter
         console.log('got critter')
         console.log(res)
         let dumpCritters = document.getElementById('dump-critters')
@@ -14,7 +14,7 @@ const clickCritter = (critter) =>{
             dumpCritters.removeChild(dumpCritters.firstChild)
         }
         for(let i = 0; i < res.data.length; i++){
-            let critter = document.createElement('img')
+            let critter = document.createElement('img') //creates img
             critter.className = 'critter-item'
             critter.src = res.data[i].image_url
             critter.addEventListener('click', e =>{

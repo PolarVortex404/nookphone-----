@@ -118,3 +118,10 @@ footer {
   margin-top: 300px;
   align-items: left;
 }
+.village-form {
+  text-align: center;
+}
+.sCrittersBackground {
+  background-image: url("/public/images-acnh/resetti/background.jpg");
+  
+}
