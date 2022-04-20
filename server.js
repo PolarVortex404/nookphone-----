@@ -6,7 +6,7 @@ const {acnhApi} = require('./acnh-api')
 
 app.use(express.json())
 app.use(express.static('public'))
-app.set('view engine','ejs')
+app.set('view engine','ejs') //this tells express to render views w/ ejs
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -68,7 +68,7 @@ app.get('/social-critters', (req,res) =>{
     islandController.list(req,res).then(islands =>{
         console.log('rendering social critters')
         console.log(islands)
-        res.render('social-critters', {
+        res.render('social-critters', { //binds object model to 'view' and allows us to display islands 
             islands: islands 
         })
     })

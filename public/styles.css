@@ -32,13 +32,14 @@ footer {
     text-align: center;
   }
 .critterpedia-header {
-    padding: 10px;
+    padding: 25px;
     text-align: center;
     background: #6FB5E9;
     color: white;
     font-size: 30px;
     font-family: Helvetica;
 }
+
 .sticky {
     position: fixed;
     top: 0;
@@ -124,11 +125,6 @@ footer {
 .sCrittersBackground {
   background-image: url("/public/images-acnh/resetti/background.jpg");
   
-}
-
-.islands-container{
-
-
 }
 
 .user-island {
