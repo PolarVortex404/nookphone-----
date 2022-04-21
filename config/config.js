@@ -22,6 +22,12 @@ module.exports =
     password: DB_PASSWORD,
     database: "nookphone_db_prod",
     host: DB_HOST,
-    dialect: "postgres"
+    dialect: "postgres",
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
+    }
   }
 }
