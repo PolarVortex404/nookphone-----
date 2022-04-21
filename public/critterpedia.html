@@ -8,25 +8,28 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-   <div onclick="location.href='/'" class="critterpedia-header sticky" id="critr-header">
-       <h1>C R I T T E R P E D I A</h1>
-       <p>click a critter to see more or click the text above to return home</p>
-   </div>
+  
+    <div onclick="location.href='/'" class="critterpedia-header sticky" id="critr-header">
+        <h1>C R I T T E R P E D I A</h1>
+        <p>click a critter to see more or click the text above to return home</p>
+    </div>
+    
+    <div class="sticky content" id="critr-content">
 
-   <div class="sticky content" id="critr-content">
-       <div class="blathers">
-           <img src="./images-acnh/Blathers_NH_-_alt.png">
-       </div>
-       <div class="bugs">
-           <img onclick="clickCritter('bugs')" src="./images-acnh/bugs/Bagworm_NH_Icon.png">
+        <div class="blathers">
+            <img src="./images-acnh/Blathers_NH_-_alt.png">
         </div>
-       <div class="fish">
-           <img onclick="clickCritter('fish')" src="./images-acnh/footballfish-NH-Icon.png">
-       </div>
-       <div class="sea">
-           <img onclick="clickCritter('sea')" src="./images-acnh/deepSea/NH-Icon-seastar.png">
+        <div class="bugs">
+            <img onclick="clickCritter('bugs')" src="./images-acnh/bugs/Bagworm_NH_Icon.png">
         </div>
-   </div>
+        <div class="fish">
+            <img onclick="clickCritter('fish')" src="./images-acnh/footballfish-NH-Icon.png">
+        </div>
+        <div class="sea">
+            <img onclick="clickCritter('sea')" src="./images-acnh/deepSea/NH-Icon-seastar.png">
+        </div>
+    </div>
+        
    <div class="dump-critters-container" id="dump-critters"></div>
    <div class="hide push-down-margin" id="critter-detail-container">
    

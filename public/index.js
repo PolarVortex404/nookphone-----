@@ -3,13 +3,13 @@ window.onscroll = function() {myFunction()};
 
 const cHeader = document.getElementById('critterpedia-header')
 
-const sticky = critterpedia-header.offSetTop;
+const sticky = cHeader.offSetTop;
 
 function myFunction() {
     if(window.pageYOffset > sticky) {
-        critterpedia-header.classList.add('sticky');
+        cHeader.classList.add('sticky');
     }else{
-        critterpedia-header.classList.remove('sticky');
+        cHeader.classList.remove('sticky');
     }
 }
 
@@ -20,5 +20,6 @@ function clickMap() {
 }}
 
 function openGoogleMaps(position) {
+  console.log('opening goog')
   window.location =`https://maps.google.com?q=${position.coords.latitude},${position.coords.longitude}`
 }

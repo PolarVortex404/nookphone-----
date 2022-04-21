@@ -7,23 +7,23 @@
     <title>Nookphone</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header></header>
-    <nav>
-        <a href="index.html"> H O M E</a>
-    </nav>
+<body class="scBackground-img">
+
+    <div onclick="window.location='index.html'">
+        <p class="homeButt"> H O M E</p>
+    </div>
     <div>
-        <div class="header"> 
-            <h1>Social Critters</h1>
-            <div>
-                <div id="neighId" class="neighbor-container">
-                    <section></section>
-                    <div >
+        <div id="neighId" class="neighbor-container box">
+            <div class="header"> 
+                <h1 class="scHeader">Social Critters</h1>
+                <div>
+                    
+                    <div>
                         <div class="form-class">
                             <h2>Enter your name and populate your village</h2>
                             <p>in the game, you typically start with 3 random villagers -- Who's in your village? </p>
                         </div>
-                        <br> <p></p>
+                        <br> 
                         <form action="/api/island" method="post">
                             <div class="village-form" id="vform-response">
                                 <label for="islandOwner">Your Name Here:</label>
@@ -32,51 +32,50 @@
                                 <input type="text" id="islandName" name="islandName">
                                 <button id="selectBtn" >Click Me</button>
                             </div>
-                                
+                            
+                            
                         </form>
+                        <br><br>
                     </div>
                 </div>
-            
+                
             </div>
         </div>
         
-        <div class="islands-container">
-        
-                <%islands.forEach(function(el, index) { %>
-                   
-                        <div class="user-island">
+        <div class="islands-container box">
             
-                            <div class="center-text">
-                                <h2> Village: <%= el.islandName %> </h2>
+            <%islands.forEach(function(el, index) { %>
+                
+                <div class="user-island">
+                    
+                    <div class="center-text">
+                        <h2> Village: <%= el.islandName %> </h2>
+                    </div>
+                    
+                    <div class="center-text">
+                        <h3> Created By: <%= el.islandOwner %> </h3>
+                    </div>
+                    <div class="villagers-container">
+                        <% el.villagers.forEach(function(el,index) { %>
+                            <div class="villager-item">                                
+                                
+                                <img src="<%= el.imageUrl%>" height="100" width="100">
+                                <script>console.log(el.imageUrl)</script>
+                                
+                                <p>
+                                    <b>Villager:</b> <%= el.name %> 
+                                </p>
+                                <p>
+                                    <b>Personality:</b> <%=el.personality %>
+                                </p>
+                                
                             </div>
-                            
-                            <div class="center-text">
-                                <h3> Created By: <%= el.islandOwner %> </h3>
-                            </div>
-                            <div class="villagers-container">
-                                <% el.villagers.forEach(function(el,index) { %>
-                                    <div class="villager-item">                                
-                                    
-                                        <img src="<%= el.imageUrl%>" height="100" width="100">
-                                        <script>console.log(el.imageUrl)</script>
-                                        
-                                        <p>
-                                            <b>Villager:</b> <%= el.name %> 
-                                        </p>
-                                        <p>
-                                            <b>Personality:</b> <%=el.personality %>
-                                        </p>
-                                        
-                                    </div>
-                                    <%}); %>                   
-                                </div>
-                                <hr>
-                            <%}); %>
-    
-
+                            <%}); %>                   
                         </div>
-        </div>
-           
-        
-</body>
-</html>
+                        <hr>
+                        <%}); %>
+                        
+                    </div>
+                </div>
+            </body>
+            </html>
